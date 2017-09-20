@@ -5,7 +5,7 @@
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
   }
-//Traveler Object
+//Traveler Blueprint
   function Traveler(name, food, isHealth) {
     this.name = name;
     this.food = food;
@@ -19,9 +19,11 @@
 
   //Hunt function
   function hunt(traveler) {
-    if (Math.random() >.5)
+    if (Math.random() >.5) {
       traveler.food += 100;
     }
+    return traveler.food
+  }
 
   //Eat function
   function eat(traveler) {
@@ -31,6 +33,7 @@
     else {
       traveler.food -= 20;
     }
+    return traveler.isHealth;
   }
 
   //Wagon Blueprint
